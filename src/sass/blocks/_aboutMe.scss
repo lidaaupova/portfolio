@@ -1,0 +1,87 @@
+.aboutMe {
+    &__wrapper {
+        padding-top: 120px;
+        padding-right: 100px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__photo {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__grid-container {
+        padding-top: 7px;
+        margin-left: 70px;
+        display: grid;
+        grid-template-columns: repeat(2, 260px);
+        grid-template-rows: minmax(250px, auto) repeat(2, minmax(116px, auto));
+        gap: 20px 50px;
+        grid-auto-rows: minmax(116px, auto);
+        grid-template-areas:
+        "header header"
+        "web mobile"
+        "design design";
+    }
+    &__suptitle {
+        position: relative;
+        padding-left: 12px;
+        margin-bottom: 6px;
+        @include before_circle;
+    }
+    &__title {
+        @include after_elem;
+        &::after {
+            margin: 4px 0 20px 0;
+        }
+    }
+    &__descr {
+        font-size: 14px;
+        line-height: 21px;
+        margin-bottom: 20px;
+    }
+    &__flex {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        @include before_circle;
+        &::before {
+            top: 0;
+        }
+    }
+    &__icon {
+        margin-right: 35px;
+        transform: translate(15px, 15px); 
+        &-second {
+            margin-right: 45px;
+        }
+    }
+    &__elem {
+        &-title {
+            margin-top: -3px;
+        }
+        &_descr {
+            font-size: 12px;
+            line-height: 18px;
+            margin-top: 6px;
+        }
+    }
+}
+
+#header {
+    grid-area: header;
+}
+
+#web {
+    grid-area: web;
+}
+
+#mobile {
+    grid-area: mobile;
+}
+
+#ddesign {
+    grid-area: design;
+}
